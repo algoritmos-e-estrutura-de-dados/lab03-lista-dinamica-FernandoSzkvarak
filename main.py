@@ -1,40 +1,16 @@
-from node import Node
+from lista import Lista
 
+lista = Lista()
 
-class Lista:
-    inicio = None
+lista.adicionar(1)
+lista.adicionar(2)
+lista.adicionar(3)
+lista.adicionar(4)
+lista.adicionar(5)
+lista.adicionar(6)
 
-    def init(self):
-        self.inicio = None
+lista.show()
 
-    def adicionar(self, valor):
-        if (self.inicio == None):
-            self.inicio = Node(valor, None)
+lista.remover_um(3)
 
-        else:
-            aux = self.inicio
-            while (aux.proximo != None):
-                aux = aux.proximo
-
-            aux.proximo = Node(valor, None)
-
-    def show(self):
-        aux = self.inicio
-        print("[", end='')
-
-        while (aux != None):
-            print(f"{aux.valor}, ", end='')
-            aux = aux.proximo
-
-        print("]")
-
-    def remover_um(self, valor):
-        aux = self.inicio
-
-        if aux == None:
-          return
-
-        if aux != None:
-          if aux.valor == valor:
-            self.inicio = self.proximo
-            self = None
+lista.show()
